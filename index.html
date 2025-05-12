@@ -1,0 +1,2431 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo Lógica de Programação com Linguagem C</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Aprendendo Lógica de Programação com Linguagem C</h1>
+        <p>Um guia completo para iniciantes na programação</p>
+    </header>
+
+    <div class="chapter">
+        <h2>Propósito da Linguagem C</h2>
+        <p>A linguagem C é uma das linguagens de programação mais importantes e influentes da história da computação.
+            Foi criada em 1972 por Dennis Ritchie como sucessora da linguagem B e até hoje é muito usada principalmente por estar na lista de linguagens mais rápidas do mundo.
+        </p>
+        
+        <h3>Principais características:</h3>
+        <ul>
+            <li><strong>Linguagem de propósito geral</strong></li>
+            <li>Eficiênte</li>
+            <li>Código executado de forma <strong>rápida</strong></li>
+            <li><strong>Portabilidade:</strong> Pode ser compilada em diversas plataformas</li>
+        </ul>
+        
+        <h3>Por que aprender C?</h3>
+        <p><strong>C</strong> é uma linguagem que, embora um pouco complexa para alguns, ainda assim possui todos as funcionalidades necessárias para que 
+            uma pessoa possa aprender lógica de programação.
+            Esta é a finalidade deste site. Te ensinar lógica de programação de forma simples e tranquila.
+        </p>
+        <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    printf("C é a base para muitas linguagens modernas!\n");
+    return 0;
+}</code></pre>
+    </div>
+<div id="aviso">
+    <h2>
+        AVISO:
+    </h2>
+    <p>
+        Mesmo que o material seja para ensinar de forma rápida e simples, não quer dizer que você não tenha que <strong>PRATICAR.</strong>
+    </p>
+    <p>
+        <strong>PRATICAR</strong> é uma fase importante do aprendizado. E não deve ser negligenciada de nenhuma forma.
+        <p>
+            Então, se quer aprender realmente. <strong>PRATIQUE BASTANTE.</strong> Permita-se <strong>ERRAR.</strong>
+            E, acima de tudo, <strong>NÃO DESISTA!!!</strong>
+        </p>
+    </p>
+</div>
+    <div class="nav">
+        <h2>Sumário</h2>
+        <ul>
+            <li><a href="#cap1">Capítulo 1 - Instalação</a></li>
+            <li><a href="#cap2">Capítulo 2 - Comentários e sequências de escape</a></li>
+            <li><a href="#cap3">Capítulo 3 - Variáveis</a></li>
+            <li><a href="#cap4">Capítulo 4 - Tipos de Dados</a></li>
+            <li><a href="#cap5">Capítulo 5 - Especificadores de formatação</a></li>
+            <li><a href="#cap6">Capítulo 6 - Constantes</a></li>
+            <li><a href="#cap7">Capítulo 7 - Operadores Aritiméticos</a></li>
+            <li><a href="#cap8">Capítulo 8 - Operadores de Atribuição Compostos</a></li>
+            <li><a href="#cap9">Capítulo 9 - Entrada de Dados do Usuário</a></li>
+            <li><a href="#cap10">Capítulo 10 - Funções Matemáticas</a></li>
+            <li><a href="#cap11">Capítulo 11 - Condições IF, ELSE IF e ELSE</a></li>
+            <li><a href="#cap12">Capítulo 12 - Condições SWITCH, CASE e DEFAULT</a></li>
+            <li><a href="#cap13">Capítulo 13 - Operador Lógico AND (&&)</a></li>
+            <li><a href="#cap14">Capítulo 14 - Operador Lógico OR (||)</a></li>
+            <li><a href="#cap15">Capítulo 15 - Operador Lógico NOT(!)</a></li>
+            <li><a href="#cap16">Capítulo 16 - Funções</a></li>
+            <li><a href="#cap17">Capítulo 17 - Argumentos</a></li>
+            <li><a href="#cap18">Capítulo 18 - Condição RETURN</a></li>
+            <li><a href="#cap19">Capítulo 19 - Operadores Ternários (?, :)</a></li>
+            <li><a href="#cap20">Capítulo 20 - Funções Protótipo</a></li>
+            <li><a href="#cap21">Capítulo 21 - Funções String</a></li>
+            <li><a href="#cap22">Capítulo 22 - Estrutura de Repetição FOR</a></li>
+            <li><a href="#cap23">Capítulo 23 - Estrutura de Repetição WHILE</a></li>
+            <li><a href="#cap24">Capítulo 24 - Estrutura DO, WHILE</a></li>
+            <li><a href="#cap25">Capítulo 25 - Estruturas de Repetição Internas (Nested Loops)</a></li>
+            <li><a href="#cap26">Capítulo 26 - BREAK vs CONTINUE</a></li>
+            <li><a href="#cap27">Capítulo 27 - Arrays</a></li>
+            <li><a href="#cap28">Capítulo 28 - Mostrando uma Array usando Estruturas de Repetição</a></li>
+            <li><a href="#cap29">Capítulo 29 - Arrays 2D</a></li>
+            <li><a href="#cap30">Capítulo 30 - Arrays de String</a></li>
+            <li><a href="#cap31">Capítulo 31 - Trocar Valores Entre Duas Variáveis</a></li>
+            <li><a href="#cap32">Capítulo 32 - Organizar uma Array</a></li>
+            <li><a href="#cap33">Capítulo 33 - STRUCT</a></li>
+            <li><a href="#cap34">Capítulo 34 - TYPEDEF</a></li>
+            <li><a href="#cap35">Capítulo 35 - Arrays de STRUCTS</a></li>
+            <li><a href="#cap36">Capítulo 36 - ENUMS</a></li>
+            <li><a href="#cap37">Capítulo 37 - Números Aleatórios</a></li>
+            <li><a href="#cap38">Capítulo 38 - Operadores Bitwise</a></li>
+            <li><a href="#cap39">Capítulo 39 - Endereços de Memória</a></li>
+            <li><a href="#cap40">Capítulo 40 - Ponteiros</a></li>
+            <li><a href="#cap41">Capítulo 41 - Criando arquivos</a></li>
+            <li><a href="#cap42">Capítulo 42 - Lendo arquivos</a></li>
+            <li><a href="#cap43">Capítulo 43 - Conclusão <strong>(EM FASE DE FINALIZAÇÃO)</strong></a></li>
+            <li><a href="#cap44">Capítulo 44 - Exercícios Práticos <strong>(EM FASE DE FINALIZAÇÃO)</strong></a></li>
+
+        </ul>
+    </div>
+
+    <!-- Capítulo 1 -->
+    <div id="cap1" class="chapter">
+        <h2>Capítulo 1 - Instalando e Compilando C</h2>
+        <p>Neste capítulo, você aprenderá a configurar seu ambiente para compilar programas em C usando duas IDEs populares: <strong>Code::Blocks</strong> e <strong>Visual Studio Code</strong>. Abordaremos os três principais sistemas operacionais.</p>
+    
+        <h3>🔹 Windows</h3>
+        <h4>Opção 1: Code::Blocks (recomendado para iniciantes)</h4>
+        <ol>
+            <li>Acesse: <a href="http://www.codeblocks.org/downloads/26" target="_blank" rel="noopener">codeblocks.org/downloads</a></li>
+            <li>Baixe o instalador: <strong>codeblocks-XX.XXmingw-setup.exe</strong></li>
+            <li>Durante a instalação, certifique-se de marcar a opção para instalar o compilador MinGW.</li>
+            <li>Abra o Code::Blocks e crie um novo projeto: <strong>File &gt; New &gt; Project &gt; Console Application</strong></li>
+            <li>Siga os passos, selecione C como linguagem e compile usando <kbd>Build and Run</kbd> (atalho: <kbd>F9</kbd>)</li>
+        </ol>
+    
+        <h4>Opção 2: Visual Studio Code</h4>
+        <ol>
+            <li>Baixe e instale o <a rel="noopener" href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a></li>
+            <li>Instale o <a rel="noopener" href="https://www.mingw-w64.org/" target="_blank">MinGW-w64</a>:
+                <ul>
+                    <li>Use o instalador <strong>MSYS2</strong> para facilitar.</li>
+                    <li>Ou baixe diretamente o MinGW-w64 e adicione o caminho do binário ao <strong>PATH</strong> do sistema.</li>
+                </ul>
+            </li>
+            <li>Abra o VS Code e instale as extensões:
+                <ul>
+                    <li><strong>C/C++</strong> (by Microsoft)</li>
+                    <li><strong>Code Runner</strong> (opcional para testes rápidos)</li>
+                </ul>
+            </li>
+            <li>Crie um arquivo <code>.c</code> e use <kbd>Ctrl + Alt + N</kbd> (Code Runner) ou configure um <strong>tasks.json</strong> para compilar com <code>gcc</code>.</li>
+        </ol>
+    
+        <h3>🔹 MacOS</h3>
+        <ol>
+            <li>Abra o Terminal e digite:
+                <pre><code>xcode-select --install</code></pre>
+                Isso instalará o compilador <strong>clang</strong>.
+            </li>
+            <li>Você pode usar:
+                <ul>
+                    <li><strong>Code::Blocks</strong>: disponível para Mac, mas menos usado.</li>
+                    <li><strong>VS Code</strong>: Recomendado. Instale o VS Code e as mesmas extensões do Windows.</li>
+                </ul>
+            </li>
+            <li>Compile seus arquivos .c com:
+                <pre><code>clang programa.c -o programa
+    ./programa</code></pre>
+            </li>
+        </ol>
+    
+        <h3>🔹 Linux (Ubuntu, Fedora, etc.)</h3>
+        <ol>
+            <li>No terminal, instale as ferramentas de desenvolvimento:
+                <pre><code>sudo apt update
+    sudo apt install build-essential</code></pre>
+            </li>
+            <li>Ou, em sistemas baseados em Fedora:
+                <pre><code>sudo dnf groupinstall "Development Tools"</code></pre>
+            </li>
+            <li>Instale o VS Code:
+                <ul>
+                    <li>Disponível via Snap ou pacotes .deb/.rpm.</li>
+                    <li>Instale as extensões C/C++ normalmente.</li>
+                </ul>
+            </li>
+            <li>Compile no terminal com:
+                <pre><code>gcc programa.c -o programa
+    ./programa</code></pre>
+            </li>
+        </ol>
+    
+        <h3>✅ Testando um código</h3>
+        <p>Copie o seguinte código e compile com qualquer método descrito acima:</p>
+        <pre><code>#include &lt;stdio.h&gt;
+    
+    int main() {
+        printf("Olá, mundo em C!\n");
+        return 0;
+    }</code></pre>
+    
+        <p>Se aparecer "Olá, mundo em C!" no terminal ou console, sua configuração está funcionando!</p>
+    </div>
+    
+
+    <!-- Capítulo 2 -->
+    <div id="cap2" class="chapter">
+        <h2>Capítulo 2 - Comentários e Sequências de Escape</h2>
+        <p>Comentários são usados para deixar o código mais simples de se entender.</p>
+        <p>Em <strong>C</strong> duas barras "<strong>//</strong>" significa uma linha de comentário.</p>
+        <p>Para comentar em mais de uma linha usa-se "<strong>/**/</strong>"</p>
+        <h3>Comentários</h3>
+        <pre><code>// Comentário de uma linha
+/* Comentário de 
+   múltiplas linhas */</code></pre>
+        
+        <h3>Sequências de Escape</h3>
+        <p>Combinação de caracteres que consiste em usar contra-barra "<strong>\</strong>" seguido de uma letra ou combinação de dígitos.</p>
+        <table>
+            <tr>
+                <th>Sequência</th>
+                <th>Descrição</th>
+            </tr>
+            <tr>
+                <td><strong>\n</strong></td>
+                <td>Nova linha</td>
+            </tr>
+            <tr>
+                <td><strong>\t</strong></td>
+                <td>Tabulação Horizontal</td>
+            </tr>
+            <tr>
+                <td>"<strong>\"\"</strong>"</td>
+                <td>Para mostrar aspas duplas ou simples sem comprometer a sintaxe</td>
+            </tr>
+            <tr>
+                <td><strong>\b</strong></td>
+                <td>Backspace</td>
+            </tr>
+            <tr>
+                <td><strong>\v</strong></td>
+                <td>Tubulação Vertical</td>
+            </tr>
+        </table>
+        </div>
+
+    <!-- Capítulo 3 -->
+<div id="cap3" class="chapter">
+    <h2>Capítulo 3 - Variáveis</h2>
+    <p>Variáveis são utilizadas para armazenar valores na memória do computador. Em C, todas as variáveis devem ser declaradas com um tipo.</p>
+
+    <h3>Exemplo básico:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int idade = 25;
+    float altura = 1.75;
+    char letra = 'A';
+    char nome[] = "Carlos";
+
+    printf("Idade: %d\n", idade);
+    printf("Altura: %.2f\n", altura);
+    printf("Letra: %c\n", letra);
+    printf("Nome: %s", nome);
+
+    return 0;
+}</code></pre>
+
+    <h3>Tipos comuns de variáveis:</h3>
+    <ul>
+        <li><strong>int</strong> – números inteiros (ex: 1, 50, -30)</li>
+        <li><strong>float</strong> – números reais com ponto flutuante (ex: 3.14, -0.99)</li>
+        <li><strong>char</strong> – caracteres únicos (ex: 'A', 'b', '1')</li>
+        <li><strong>char []</strong> - carcateres em cadeia (ex: "Olá", "Mundo", "C")</li>
+    </ul>
+
+    <h3>Regras para nomes de variáveis:</h3>
+    <ul>
+        <li>Devem começar com uma letra ou underscore (_)</li>
+        <li>Não podem conter espaços ou caracteres especiais</li>
+        <li>São sensíveis a maiúsculas e minúsculas</li>
+        <li>Não podem ser palavras reservadas da linguagem (ex: if, int, void, define etc)</li>
+    </ul>
+
+    <h3>Boa prática:</h3>
+    <p>Use nomes descritivos e significativos. Exemplo: <code>int idadeUsuario;</code> em vez de <code>int x;</code></p>
+</div>
+
+<!-- Capítulo 4 -->
+<div id="cap4" class="chapter">
+    <h2>Capítulo 4 - Tipos de Dados</h2>
+    <p>Os tipos de dados em C determinam o tamanho da memória e o tipo de valor que uma variável pode armazenar.</p>
+
+    <h3>Exemplos com declaração, uso e tamanho:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdbool.h&gt;
+
+int main() {
+    char a = 'C';                       // 1 byte: caractere único (%c)
+    char b[] = "Bro";                  // array de caracteres (%s)
+
+    float c = 3.141592;                // 4 bytes, 6-7 dígitos (%f)
+    double d = 3.141592653589793;      // 8 bytes, 15-16 dígitos (%lf)
+
+    bool e = true;                     // 1 byte, verdadeiro ou falso (%d)
+
+    char f = 100;                      // 1 byte (-128 a 127) (%d ou %c)
+    unsigned char g = 255;             // 1 byte (0 a 255) (%d ou %c)
+
+    short int h = 32767;               // 2 bytes (-32.768 a 32.767) (%d)
+    unsigned short i = 65535;          // 2 bytes (0 a 65.535) (%d)
+
+    long int j = 2147483647;           // 4 bytes (-2.147.483.648 a 2.147.483.647) (%d)
+    unsigned long int k = 4294967295L; // 4 bytes (0 a 4.294.967.295) (%u)
+
+    long long int l = 9223372036854775807;         // 8 bytes (%lld)
+    unsigned long long int m = 18446744073709551615U; // 8 bytes (%llu)
+
+    printf("Exemplo: %c, %s, %.2f, %.15lf\n", a, b, c, d);
+
+    return 0;
+}</code></pre>
+
+    <h3>Tabela com tipos, tamanhos e faixas:</h3>
+    <table>
+        <tr>
+            <th>Tipo</th>
+            <th>Tamanho</th>
+            <th>Faixa</th>
+            <th>Formato</th>
+        </tr>
+        <tr>
+            <td>char</td>
+            <td>1 byte</td>
+            <td>-128 a +127</td>
+            <td>%c ou %d</td>
+        </tr>
+        <tr>
+            <td>unsigned char</td>
+            <td>1 byte</td>
+            <td>0 a 255</td>
+            <td>%c ou %d</td>
+        </tr>
+        <tr>
+            <td>short int</td>
+            <td>2 bytes</td>
+            <td>-32.768 a +32.767</td>
+            <td>%d</td>
+        </tr>
+        <tr>
+            <td>unsigned short</td>
+            <td>2 bytes</td>
+            <td>0 a 65.535</td>
+            <td>%d</td>
+        </tr>
+        <tr>
+            <td>int</td>
+            <td>4 bytes</td>
+            <td>-2.147.483.648 a +2.147.483.647</td>
+            <td>%d</td>
+        </tr>
+        <tr>
+            <td>unsigned int</td>
+            <td>4 bytes</td>
+            <td>0 a 4.294.967.295</td>
+            <td>%u</td>
+        </tr>
+        <tr>
+            <td>long int</td>
+            <td>4 bytes</td>
+            <td>Mesma faixa do int</td>
+            <td>%ld</td>
+        </tr>
+        <tr>
+            <td>unsigned long int</td>
+            <td>4 bytes</td>
+            <td>0 a 4.294.967.295</td>
+            <td>%lu</td>
+        </tr>
+        <tr>
+            <td>long long int</td>
+            <td>8 bytes</td>
+            <td>-9 quintilhões a +9 quintilhões</td>
+            <td>%lld</td>
+        </tr>
+        <tr>
+            <td>unsigned long long int</td>
+            <td>8 bytes</td>
+            <td>0 a 18 quintilhões</td>
+            <td>%llu</td>
+        </tr>
+        <tr>
+            <td>float</td>
+            <td>4 bytes</td>
+            <td>~6-7 dígitos de precisão</td>
+            <td>%f</td>
+        </tr>
+        <tr>
+            <td>double</td>
+            <td>8 bytes</td>
+            <td>~15-16 dígitos de precisão</td>
+            <td>%lf</td>
+        </tr>
+        <tr>
+            <td>bool</td>
+            <td>1 byte</td>
+            <td>true (1) ou false (0)</td>
+            <td>%d</td>
+        </tr>
+    </table>
+
+    <h3>Notas importantes:</h3>
+    <ul>
+        <li>Use <code>#include &lt;stdbool.h&gt;</code> para usar o tipo <code>bool</code></li>
+        <li>O modificador <code>unsigned</code> elimina a possibilidade de números negativos</li>
+        <li>Tipos <code>long</code> e <code>short</code> são modificadores de <code>int</code></li>
+    </ul>
+</div>
+
+<!-- Capítulo 5 -->
+<div id="cap5" class="chapter">
+    <h2>Capítulo 5 - Especificadores de Formatação</h2>
+    <p>Especificadores de formatação são usados com <code>printf()</code> para exibir e <code>scanf()</code> para ler dados corretamente.</p>
+
+    <h3>Principais especificadores para <code>printf()</code>:</h3>
+    <table>
+        <tr>
+            <th>Especificador</th>
+            <th>Descrição</th>
+            <th>Exemplo de uso</th>
+        </tr>
+        <tr>
+            <td>%d</td>
+            <td>Número inteiro decimal (int)</td>
+            <td>printf("Valor: %d", idade);</td>
+        </tr>
+        <tr>
+            <td>%u</td>
+            <td>Inteiro sem sinal (unsigned int)</td>
+            <td>printf("Valor: %u", idade);</td>
+        </tr>
+        <tr>
+            <td>%f</td>
+            <td>Número de ponto flutuante (float)</td>
+            <td>printf("Altura: %.2f", altura);</td>
+        </tr>
+        <tr>
+            <td>%lf</td>
+            <td>Número de ponto flutuante (double)</td>
+            <td>printf("PI: %.15lf", pi);</td>
+        </tr>
+        <tr>
+            <td>%c</td>
+            <td>Caractere único</td>
+            <td>printf("Letra: %c", letra);</td>
+        </tr>
+        <tr>
+            <td>%s</td>
+            <td>String (texto)</td>
+            <td>printf("Nome: %s", nome);</td>
+        </tr>
+        <tr>
+            <td>%lld</td>
+            <td>Long long int (inteiros grandes)</td>
+            <td>printf("Valor: %lld", numeroGrande);</td>
+        </tr>
+        <tr>
+            <td>%llu</td>
+            <td>Unsigned long long int</td>
+            <td>printf("Valor: %llu", numeroGrande);</td>
+        </tr>
+        <tr>
+            <td>%%</td>
+            <td>Imprime o caractere %</td>
+            <td>printf("Taxa: 100%%");</td>
+        </tr>
+    </table>
+
+    <h3>Formatação com casas decimais:</h3>
+    <p>Você pode controlar a quantidade de casas decimais exibidas com <code>%.nf</code>, onde <code>n</code> é o número de casas.</p>
+    <pre><code>float preco = 9.99;
+printf("Preço: %.2f\n", preco); // Saída: Preço: 9.99</code></pre>
+
+    <h3>Exemplo completo:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int idade = 25;
+    float altura = 1.75;
+    char letra = 'M';
+    char nome[] = "Miguel";
+
+    printf("Nome: %s\n", nome);
+    printf("Idade: %d anos\n", idade);
+    printf("Altura: %.2f metros\n", altura);
+    printf("Inicial: %c\n", letra);
+
+    return 0;
+}</code></pre>
+
+    <h3>Dica bônus:</h3>
+    <p>Você pode alinhar valores com largura mínima usando, por exemplo, <code>%10d</code> (alinha à direita em 10 espaços).</p>
+</div>
+
+<!-- Capítulo 6 -->
+<div id="cap6" class="chapter">
+    <h2>Capítulo 6 - Constantes</h2>
+
+    <p>Constantes são valores fixos que não podem ser alterados durante a execução do programa. Elas são muito úteis para tornar o código mais legível e seguro.
+        Se tentar alterar o valor durante a execução, o programa mostrará um erro.
+    </p>
+
+    <h3>Usando <code>#define</code></h3>
+    <p>A diretiva <code>#define</code> permite criar constantes simbólicas:</p>
+
+<pre><code>#include &lt;stdio.h&gt;
+
+#define PI 3.14159
+
+int main() {
+    printf("O valor de PI é: %f\n", PI);
+    return 0;
+}</code></pre>
+
+    <p><strong>Observação:</strong> O <code>#define</code> não usa ponto e vírgula no final da linha.</p>
+
+    <h3>Usando <code>const</code></h3>
+    <p>Também podemos declarar constantes com a palavra-chave <code>const</code>:</p>
+
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    const int idade = 18;
+    printf("Idade mínima: %d\n", idade);
+    return 0;
+}</code></pre>
+
+    <strong><p>Ao tentar alterar o valor de uma variável <code>const</code>, o compilador gerará um erro.</p></strong>
+
+    <h3>Diferenças entre <code>#define</code> e <code>const</code></h3>
+    <table>
+        <tr>
+            <th>Aspecto</th>
+            <th>#define</th>
+            <th>const</th>
+        </tr>
+        <tr>
+            <td>Tipo de dado</td>
+            <td>Não possui tipo</td>
+            <td>Possui tipo</td>
+        </tr>
+        <tr>
+            <td>Visibilidade</td>
+            <td>Substituição textual</td>
+            <td>Checagem de tipo pelo compilador</td>
+        </tr>
+        <tr>
+            <td>Depuração</td>
+            <td>Mais difícil</td>
+            <td>Mais fácil</td>
+        </tr>
+    </table>
+
+    <h3>Boas práticas</h3>
+    <ul>
+        <li>Use <code>#define</code> para valores que não mudam e são usados amplamente no código.</li>
+        <li>Use <code>const</code> quando quiser proteger o valor de uma variável dentro de um escopo.</li>
+        <li>Use letras maiúsculas para nomes de constantes simbólicas com <code>#define</code>.</li>
+    </ul>
+
+    <p>Constantes ajudam a evitar erros e deixam o código mais claro e fácil de manter.</p>
+</div>
+
+
+
+<!-- Capítulo 7 -->
+<div id="cap7" class="chapter">
+    <h2>Capítulo 7 - Operadores Aritméticos</h2>
+    <p>Operadores aritméticos são usados para realizar operações matemáticas com variáveis ou valores diretamente.</p>
+
+    <h3>Principais operadores:</h3>
+    <table>
+        <tr>
+            <th>Operador</th>
+            <th>Operação</th>
+            <th>Exemplo</th>
+        </tr>
+        <tr>
+            <td><strong>+</strong></td>
+            <td>Adição</td>
+            <td>int soma = a + b;</td>
+        </tr>
+        <tr>
+            <td><strong>-</strong></td>
+            <td>Subtração</td>
+            <td>int sub = a - b;</td>
+        </tr>
+        <tr>
+            <td><strong>*</strong></td>
+            <td>Multiplicação</td>
+            <td>int mult = a * b;</td>
+        </tr>
+        <tr>
+            <td><strong>/</strong></td>
+            <td>Divisão</td>
+            <td>int div = a / b;</td>
+        </tr>
+        <tr>
+            <td><strong>%</strong></td>
+            <td>Módulo (resto da divisão)</td>
+            <td>int resto = a % b;</td>
+        </tr>
+        <tr>
+            <td><strong>++</strong></td>
+            <td>Incremento (por 1)</td>
+            <td>nome_variavel++</td>
+        </tr>
+        <tr>
+            <td><strong>--</strong></td>
+            <td>Decremento (por 1)</td>
+            <td>nome_variável--</td>
+        </tr>
+    </table>
+
+    <h3>Exemplo prático:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int a = 10;
+    int b = 3;
+
+    printf("Adição: %d\n", a + b);
+    printf("Subtração: %d\n", a - b);
+    printf("Multiplicação: %d\n", a * b);
+    printf("Divisão: %d\n", a / b);
+    printf("Resto da divisão: %d\n", a % b);
+
+    a++;
+    b--;
+
+    printf("Incremento: %d", a);
+    printf("Decremento: %d", b);
+    return 0;
+}</code></pre>
+
+    <h3>Cuidados com a divisão:</h3>
+    <p>Quando você divide dois inteiros, o resultado será um inteiro. Para obter um número decimal, use <code>float</code> ou <code>double</code>.</p>
+
+    <h4>Exemplo com ponto flutuante:</h4>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    float x = 7.0;
+    float y = 2.0;
+
+    printf("Divisão com float: %.2f\n", x / y); // Saída: 3.50
+    return 0;
+}</code></pre>
+
+    <h3>Potência em C:</h3>
+    <p>Para fazer cálculo de potência, use a função <code>pow()</code> da biblioteca <code>math.h</code>.</p>
+    <pre><code>#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int main() {
+    int base = 2;
+    int expoente = 3;
+    int resultado = pow(base, expoente);
+
+    printf("%d elevado a %d = %d\n", base, expoente, resultado);
+    return 0;
+}</code></pre>
+
+    <p>Lembre-se de compilar com <code>-lm</code> para incluir a biblioteca matemática:</p>
+    <pre><code>gcc arquivo.c -o programa -lm</code></pre>
+</div>
+
+<!-- Capítulo 8 -->
+<div id="cap8" class="chapter">
+    <h2>Capítulo 8 - Operadores de Atribuição Compostos</h2>
+    <p>Esses operadores permitem realizar uma operação matemática e atribuição ao mesmo tempo. Eles tornam o código mais enxuto e fácil de entender.</p>
+
+    <h3>Principais operadores compostos:</h3>
+    <table>
+        <tr>
+            <th>Operador</th>
+            <th>Significado</th>
+            <th>Equivalente</th>
+        </tr>
+        <tr>
+            <td>+=</td>
+            <td>Adiciona e atribui</td>
+            <td>x += 5 → x = x + 5</td>
+        </tr>
+        <tr>
+            <td>-=</td>
+            <td>Subtrai e atribui</td>
+            <td>x -= 3 → x = x - 3</td>
+        </tr>
+        <tr>
+            <td>*=</td>
+            <td>Multiplica e atribui</td>
+            <td>x *= 2 → x = x * 2</td>
+        </tr>
+        <tr>
+            <td>/=</td>
+            <td>Divide e atribui</td>
+            <td>x /= 4 → x = x / 4</td>
+        </tr>
+        <tr>
+            <td>%=</td>
+            <td>Módulo e atribui</td>
+            <td>x %= 3 → x = x % 3</td>
+        </tr>
+    </table>
+
+    <h3>Exemplo prático:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int x = 10;
+
+    x += 5;
+    printf("x += 5 -> %d\n", x);
+
+    x -= 3;
+    printf("x -= 3 -> %d\n", x);
+
+    x *= 2;
+    printf("x *= 2 -> %d\n", x);
+
+    x /= 4;
+    printf("x /= 4 -> %d\n", x);
+
+    x %= 3;
+    printf("x %%= 3 -> %d\n", x);
+
+    return 0;
+}</code></pre>
+
+    <p>Esses operadores são úteis especialmente quando estamos atualizando variáveis dentro de laços e funções matemáticas repetidas.</p>
+
+    <h3>Observação</h3>
+    <p>Os operadores de incremento e decremento vistos no capítulo anterior também possuem ligação com os operadores compostos.</p>
+    <ul>
+    <li><p><strong>x++</strong> é o mesmo que <strong>x += 1</strong>.</p></li>
+    <li><p><strong>x--</strong> é o mesmo que <strong>x -= 1</strong>.</p></li>
+</ul>
+    <p>Se for para acrescentar o diminuir o valor por um, pode-se usar tanto uma forma quanto a outra.</p>
+</div>
+
+<!-- Capítulo 9 -->
+<div id="cap9" class="chapter">
+    <h2>Capítulo 9 - Entrada de Dados do Usuário</h2>
+    <p>Em C, utilizamos a função <code>scanf()</code> para capturar informações digitadas pelo usuário durante a execução do programa.</p>
+
+    <h3>Exemplo com número inteiro:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int idade;
+    printf("Digite sua idade: ");
+    scanf("%d", &idade);
+    printf("Você tem %d anos.\n", idade);
+    return 0;
+}</code></pre>
+
+    <h3>Exemplo com número decimal:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    float altura;
+    printf("Digite sua altura em metros: ");
+    scanf("%f", &altura);
+    printf("Altura registrada: %.2f metros\n", altura);
+    return 0;
+}</code></pre>
+
+    <h3>Exemplo com caractere:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    char inicial;
+    printf("Digite a primeira letra do seu nome: ");
+    scanf(" %c", &inicial); // Espaço antes de %c para ignorar o \n do buffer
+    printf("Letra registrada: %c\n", inicial);
+    return 0;
+}</code></pre>
+
+    <h3>Importante:</h3>
+    <ul>
+        <li>Sempre use o símbolo <code>&amp;</code> (e comercial) antes da variável no <code>scanf</code> para passar o endereço de memória.</li>
+        <li>Para strings, não se usa <code>&amp;</code>.</li>
+    </ul>
+
+    <h3>Exemplo com string:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    char nome[50];
+    printf("Digite seu nome: ");
+    scanf("%s", nome); // lê até o primeiro espaço
+    printf("Olá, %s!\n", nome);
+    return 0;
+}</code></pre>
+
+    <p>Para ler nomes completos com espaços, você pode usar <code>fgets()</code> no lugar de <code>scanf()</code>:</p>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    char nome[50];
+    printf("Digite seu nome completo: ");
+    fgets(nome, sizeof(nome), stdin);
+    printf("Seja bem-vindo, %s", nome);
+    return 0;
+}</code></pre>
+</div>
+
+<!-- Capítulo 10 -->
+<div id="cap10" class="chapter">
+    <h2>Capítulo 10 - Funções Matemáticas</h2>
+    <p>A linguagem C oferece diversas funções matemáticas que facilitam cálculos mais avançados. Essas funções estão disponíveis na biblioteca <code>&lt;math.h&gt;</code>.</p>
+
+    <h3>Importante:</h3>
+    <p>Para usar as funções matemáticas, lembre-se de incluir <code>#include &lt;math.h&gt;</code> e compilar com a flag <code>-lm</code> (no Linux/Mac):</p>
+    <pre><code>gcc programa.c -o programa -lm</code></pre>
+
+    <h3>Principais funções:</h3>
+    <ul>
+        <li><code>sqrt(x)</code> – raiz quadrada de <code>x</code></li>
+        <li><code>pow(base, expoente)</code> – potência</li>
+        <li><code>ceil(x)</code> – arredonda para cima</li>
+        <li><code>floor(x)</code> – arredonda para baixo</li>
+        <li><code>round(x)</code> – arredonda para o inteiro mais próximo</li>
+        <li><code>fabs(x)</code> – valor absoluto (para float/double)</li>
+    </ul>
+
+    <h3>Exemplo prático:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int main() {
+    double raiz = sqrt(16);
+    double potencia = pow(2, 5);
+    double cima = ceil(3.2);
+    double baixo = floor(3.8);
+    double arredondado = round(4.6);
+    double absoluto = fabs(-9.7);
+
+    printf("Raiz quadrada de 16: %.2f\n", raiz);
+    printf("2 elevado a 5: %.2f\n", potencia);
+    printf("Arredondado para cima (3.2): %.2f\n", cima);
+    printf("Arredondado para baixo (3.8): %.2f\n", baixo);
+    printf("Arredondado (4.6): %.2f\n", arredondado);
+    printf("Valor absoluto de -9.7: %.2f\n", absoluto);
+
+    return 0;
+}</code></pre>
+
+    <h3>Dica:</h3>
+    <p>Essas funções são especialmente úteis em programas que envolvem cálculos científicos, financeiros ou gráficos.</p>
+</div>
+
+<!-- Capítulo 11 -->
+<div id="cap11" class="chapter">
+    <h2>Capítulo 11 - Condições IF, ELSE IF e ELSE</h2>
+    <p>As estruturas condicionais permitem ao programa tomar decisões com base em determinadas condições.</p>
+
+    <h3>Sintaxe básica:</h3>
+    <pre><code>if (condição) {
+    // código se a condição for verdadeira
+} else if (outra condição) {
+    // código se a outra condição for verdadeira
+} else {
+    // código se nenhuma das condições anteriores for verdadeira
+}</code></pre>
+
+    <h3>Exemplo prático:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int idade;
+
+    printf("Digite sua idade: ");
+    scanf("%d", &idade);
+
+    if (idade &lt; 12) {
+        printf("Você é uma criança.\n");
+    } else if (idade &lt; 18) {
+        printf("Você é um adolescente.\n");
+    } else if (idade &lt; 60) {
+        printf("Você é um adulto.\n");
+    } else {
+        printf("Você é um idoso.\n");
+    }
+
+    return 0;
+}</code></pre>
+
+    <h3>Explicação:</h3>
+    <ul>
+        <li><strong>if</strong>: verifica a primeira condição.</li>
+        <li><strong>else if</strong>: verifica outra condição se a anterior for falsa.</li>
+        <li><strong>else</strong>: executa um bloco de código se nenhuma condição for satisfeita.</li>
+    </ul>
+
+    <h3>Dica:</h3>
+    <p>Use parênteses <code>()</code> ao redor das condições e chaves <code>{}</code> mesmo para blocos com uma linha – isso ajuda a evitar erros.</p>
+</div>
+
+<!-- Capítulo 12 -->
+<div id="cap12" class="chapter">
+    <h2>Capítulo 12 - Condições SWITCH, CASE e DEFAULT</h2>
+    <p>A estrutura <code>switch</code> é usada para comparar uma variável com vários valores possíveis (casos).</p>
+
+    <h3>Sintaxe:</h3>
+    <pre><code>switch (expressão) {
+    case valor1:
+        // código se expressão == valor1
+        break;
+    case valor2:
+        // código se expressão == valor2
+        break;
+    default:
+        // código se nenhum dos casos anteriores for verdadeiro
+}</code></pre>
+
+    <h3>Exemplo prático:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int opcao;
+
+    printf("Escolha uma opção (1-3): ");
+    scanf("%d", &opcao);
+
+    switch (opcao) {
+        case 1:
+            printf("Você escolheu a opção 1.\n");
+            break;
+        case 2:
+            printf("Você escolheu a opção 2.\n");
+            break;
+        case 3:
+            printf("Você escolheu a opção 3.\n");
+            break;
+        default:
+            printf("Opção inválida.\n");
+    }
+
+    return 0;
+}</code></pre>
+
+    <h3>Detalhes importantes:</h3>
+    <ul>
+        <li><strong>break</strong> impede que os outros casos sejam executados.</li>
+        <li><strong>default</strong> é opcional, mas útil para tratar valores inesperados.</li>
+        <li>A expressão dentro de <code>switch</code> geralmente é do tipo <code>int</code> ou <code>char</code>.</li>
+    </ul>
+
+    <h3>Boa prática:</h3>
+    <p>Sempre use <code>break</code> ao final de cada <code>case</code>, a menos que você queira executar mais de um bloco em sequência (fall-through).</p>
+</div>
+
+<!-- Capítulo 13 -->
+<div id="cap13" class="chapter">
+    <h2>Capítulo 13 - Operador Lógico AND (&&)</h2>
+    <p>O operador lógico <code>&&</code> (AND) é usado para verificar se duas condições são verdadeiras ao mesmo tempo.</p>
+
+    <h3>Sintaxe:</h3>
+    <pre><code>if (condição1 && condição2) {
+    // Executa este bloco se ambas as condições forem verdadeiras
+}</code></pre>
+
+    <h3>Exemplo prático:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int idade = 20;
+    int temCarteira = 1;
+
+    if (idade >= 18 && temCarteira) {
+        printf("Pode dirigir.\n");
+    } else {
+        printf("Não pode dirigir.\n");
+    }
+
+    return 0;
+}</code></pre>
+
+    <h3>Explicação:</h3>
+    <ul>
+        <li><code>idade >= 18</code> verifica se a pessoa é maior de idade.</li>
+        <li><code>temCarteira</code> (valor diferente de zero) representa que a pessoa tem carteira de motorista.</li>
+        <li>Ambas as condições devem ser verdadeiras para que a pessoa possa dirigir.</li>
+    </ul>
+
+    <h3>Tabela verdade do operador AND:</h3>
+    <table>
+        <tr>
+            <th>Condição 1</th>
+            <th>Condição 2</th>
+            <th>Resultado</th>
+        </tr>
+        <tr>
+            <td>Verdadeiro</td>
+            <td>Verdadeiro</td>
+            <td>Verdadeiro</td>
+        </tr>
+        <tr>
+            <td>Verdadeiro</td>
+            <td>Falso</td>
+            <td>Falso</td>
+        </tr>
+        <tr>
+            <td>Falso</td>
+            <td>Verdadeiro</td>
+            <td>Falso</td>
+        </tr>
+        <tr>
+            <td>Falso</td>
+            <td>Falso</td>
+            <td>Falso</td>
+        </tr>
+    </table>
+</div>
+
+<!-- Capítulo 14 -->
+<div id="cap14" class="chapter">
+    <h2>Capítulo 14 - Operador Lógico OR (||)</h2>
+    <p>O operador lógico <code>||</code> (OR) é usado para verificar se pelo menos uma de duas condições é verdadeira.</p>
+
+    <h3>Sintaxe:</h3>
+    <pre><code>if (condição1 || condição2) {
+    // Executa este bloco se pelo menos uma condição for verdadeira
+}</code></pre>
+
+    <h3>Exemplo prático:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int idade = 70;
+    int estudante = 0;
+
+    if (idade &lt;= 18 || idade &gt;= 65) {
+        printf("Tem direito a meia-entrada.\n");
+    } else {
+        printf("Precisa pagar inteira.\n");
+    }
+
+    return 0;
+}</code></pre>
+
+    <h3>Explicação:</h3>
+    <ul>
+        <li><code>idade &lt;= 18</code> verifica se é menor de idade.</li>
+        <li><code>idade &gt;= 65</code> verifica se é idoso.</li>
+        <li>Se qualquer uma dessas condições for verdadeira, a pessoa tem direito a meia-entrada.</li>
+    </ul>
+
+    <h3>Tabela verdade do operador OR:</h3>
+    <table>
+        <tr>
+            <th>Condição 1</th>
+            <th>Condição 2</th>
+            <th>Resultado</th>
+        </tr>
+        <tr>
+            <td>Verdadeiro</td>
+            <td>Verdadeiro</td>
+            <td>Verdadeiro</td>
+        </tr>
+        <tr>
+            <td>Verdadeiro</td>
+            <td>Falso</td>
+            <td>Verdadeiro</td>
+        </tr>
+        <tr>
+            <td>Falso</td>
+            <td>Verdadeiro</td>
+            <td>Verdadeiro</td>
+        </tr>
+        <tr>
+            <td>Falso</td>
+            <td>Falso</td>
+            <td>Falso</td>
+        </tr>
+    </table>
+</div>
+
+<!-- Capítulo 15 -->
+<div id="cap15" class="chapter">
+    <h2>Capítulo 15 - Operador Lógico NOT (!)</h2>
+    <p>O operador lógico <code>!</code> (NOT) inverte o valor de uma expressão booleana. Se a condição for verdadeira, ela se torna falsa, e vice-versa.</p>
+
+    <h3>Sintaxe:</h3>
+    <pre><code>if (!condição) {
+    // Executa este bloco se a condição for FALSA
+}</code></pre>
+
+    <h3>Exemplo prático:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int temCarteira = 0;
+
+    if (!temCarteira) {
+        printf("Você não pode dirigir.\n");
+    } else {
+        printf("Você pode dirigir.\n");
+    }
+
+    return 0;
+}</code></pre>
+
+    <h3>Explicação:</h3>
+    <ul>
+        <li>A variável <code>temCarteira</code> está com valor 0 (falso).</li>
+        <li><code>!temCarteira</code> inverte para verdadeiro.</li>
+        <li>Logo, o programa imprime: "Você não pode dirigir."</li>
+    </ul>
+
+    <h3>Tabela verdade do operador NOT:</h3>
+    <table>
+        <tr>
+            <th>Valor Original</th>
+            <th>Resultado com NOT (!)</th>
+        </tr>
+        <tr>
+            <td>Verdadeiro (1)</td>
+            <td>Falso (0)</td>
+        </tr>
+        <tr>
+            <td>Falso (0)</td>
+            <td>Verdadeiro (1)</td>
+        </tr>
+    </table>
+</div>
+
+<!-- Capítulo 16 -->
+<div id="cap16" class="chapter">
+    <h2>Capítulo 16 - Funções</h2>
+    <p>Funções são blocos de código reutilizáveis que executam tarefas específicas. Elas ajudam a organizar o programa, melhorar a legibilidade e evitar repetição de código.</p>
+
+    <h3>Sintaxe básica:</h3>
+    <pre><code>tipo_retorno nomeDaFuncao(parâmetros) {
+    // corpo da função
+}</code></pre>
+
+    <h3>Exemplo simples:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+// Função que imprime uma saudação
+void saudacao() {
+    printf("Olá, bem-vindo ao curso de C!\n");
+}
+
+int main() {
+    saudacao(); // chamada da função
+    return 0;
+}</code></pre>
+
+    <h3>Função com retorno de valor:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+// Função que retorna a soma de dois números
+int soma(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    int resultado = soma(3, 4);
+    printf("Resultado: %d\n", resultado);
+    return 0;
+}</code></pre>
+
+    <h3>Vantagens de usar funções:</h3>
+    <ul>
+        <li>Modularização do código</li>
+        <li>Reutilização de lógica</li>
+        <li>Facilidade na manutenção</li>
+        <li>Melhora a legibilidade</li>
+    </ul>
+
+    <h3>Dica:</h3>
+    <p>Em programas grandes, agrupe funções semelhantes em arquivos separados para organizar melhor o projeto.</p>
+</div>
+
+<!-- Capítulo 17 -->
+<div id="cap17" class="chapter">
+    <h2>Capítulo 17 - Argumentos</h2>
+    <p>Argumentos são os valores passados para uma função no momento de sua chamada. Eles permitem que uma função trabalhe com dados fornecidos externamente.</p>
+
+    <h3>Definindo e usando argumentos:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+// Função com dois argumentos
+void mostrarSoma(int x, int y) {
+    printf("Soma: %d\n", x + y);
+}
+
+int main() {
+    mostrarSoma(10, 5); // argumentos 10 e 5
+    return 0;
+}</code></pre>
+
+    <h3>Parâmetros vs Argumentos:</h3>
+    <ul>
+        <li><strong>Parâmetros:</strong> variáveis na declaração da função (ex: <code>int x, int y</code>)</li>
+        <li><strong>Argumentos:</strong> valores reais passados na chamada da função (ex: <code>10, 5</code>)</li>
+    </ul>
+
+    <h3>Função com mais de dois argumentos:</h3>
+    <pre><code>void mostrarDados(char nome[], int idade, float altura) {
+    printf("Nome: %s\n", nome);
+    printf("Idade: %d\n", idade);
+    printf("Altura: %.2f\n", altura);
+}
+
+int main() {
+    mostrarDados("Ana", 25, 1.68);
+    return 0;
+}</code></pre>
+
+    <h3>Dica:</h3>
+    <p>Use argumentos para tornar suas funções mais flexíveis e reutilizáveis. Evite usar variáveis globais sempre que possível.</p>
+</div>
+
+<!-- Capítulo 18 -->
+<div id="cap18" class="chapter">
+    <h2>Capítulo 18 - Condição RETURN</h2>
+    <p>A palavra-chave <code>return</code> é usada em funções para devolver um valor ao local de onde a função foi chamada.</p>
+
+    <h3>Função com retorno:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int somar(int a, int b) {
+    return a + b;  // Retorna a soma
+}
+
+int main() {
+    int resultado = somar(7, 3);
+    printf("Resultado da soma: %d\n", resultado);
+    return 0;
+}</code></pre>
+
+    <h3>Importância do return:</h3>
+    <ul>
+        <li>Interrompe a execução da função.</li>
+        <li>Envia um valor de volta ao chamador da função.</li>
+        <li>É obrigatório se a função for declarada com tipo diferente de <code>void</code>.</li>
+    </ul>
+
+    <h3>Funções sem retorno:</h3>
+    <p>Se a função não precisa retornar nenhum valor, ela deve ser declarada com o tipo <code>void</code>:</p>
+    <pre><code>void mensagem() {
+    printf("Função sem retorno\n");
+}</code></pre>
+
+    <h3>Função com retorno condicional:</h3>
+    <pre><code>int maior(int a, int b) {
+    if (a > b)
+        return a;
+    else
+        return b;
+}</code></pre>
+
+    <h3>Dica:</h3>
+    <p>
+        Utilize <code>return</code> para tornar funções reutilizáveis e úteis em diversos contextos do seu programa.
+    </p>
+    <p>
+        E tome cuidado com as <strong>Funções Recursivas</strong> (funções que chamam a sí mesma), pois vai acarretar em um uma repetição infinita do código.
+    </p>
+    <pre><code>void mensagem() {
+    printf("Função sem retorno\n");
+    return mensagem; // Isso fará com que o código seja repetido várias vezes sem parar
+}</code></pre>
+</div>
+
+<!-- Capítulo 19 -->
+<div id="cap19" class="chapter">
+    <h2>Capítulo 19 - Operadores Ternários</h2>
+    <p>O operador ternário é uma forma curta de escrever uma estrutura condicional <code>if-else</code>.</p>
+
+    <h3>Sintaxe:</h3>
+    <pre><code>condição ? valor_se_verdadeiro : valor_se_falso;</code></pre>
+
+    <h3>Exemplo básico:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int idade = 18;
+    const char* status = (idade >= 18) ? "Maior de idade" : "Menor de idade";
+    printf("%s\n", status);
+    return 0;
+}</code></pre>
+
+    <h3>Como funciona:</h3>
+    <ul>
+        <li>A expressão <code>idade >= 18</code> é avaliada.</li>
+        <li>Se for verdadeira, <code>"Maior de idade"</code> será atribuído a <code>status</code>.</li>
+        <li>Se for falsa, <code>"Menor de idade"</code> será atribuído.</li>
+    </ul>
+
+    <h3>Comparação com if-else:</h3>
+    <pre><code>// Forma tradicional
+if (idade >= 18)
+    status = "Maior de idade";
+else
+    status = "Menor de idade";
+
+// Forma com operador ternário
+status = (idade >= 18) ? "Maior de idade" : "Menor de idade";</code></pre>
+
+    <h3>Dica:</h3>
+    <p>O operador ternário é excelente para condições simples e expressões curtas. Evite usá-lo com lógica complexa para manter a legibilidade do código.</p>
+</div>
+
+<!-- Capítulo 20 -->
+<div id="cap20" class="chapter">
+    <h2>Capítulo 20 - Funções Protótipo</h2>
+    <p>Funções protótipo são declarações feitas antes da função principal <code>main()</code> para informar ao compilador que uma função será usada posteriormente.</p>
+
+    <h3>Por que usar protótipos?</h3>
+    <ul>
+        <li>Evita erros de compilação ao chamar funções antes de defini-las.</li>
+        <li>Permite organizar o código separando a lógica em várias partes.</li>
+    </ul>
+
+    <h3>Exemplo de função com protótipo:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+// Protótipo da função
+void saudacao();
+
+int main() {
+    saudacao();  // Chamada da função
+    return 0;
+}
+
+// Definição da função
+void saudacao() {
+    printf("Olá, bem-vindo ao mundo C!\n");
+}</code></pre>
+
+    <h3>Quando é necessário?</h3>
+    <p>Se você declarar uma função após o <code>main()</code>, é necessário fornecer um protótipo antes dele. Isso informa ao compilador sobre a existência da função e seus parâmetros.</p>
+
+    <h3>Com parâmetros:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+// Protótipo
+int soma(int a, int b);
+
+int main() {
+    int resultado = soma(5, 3);
+    printf("Resultado da soma: %d\n", resultado);
+    return 0;
+}
+
+// Definição
+int soma(int a, int b) {
+    return a + b;
+}</code></pre>
+
+    <p>O protótipo <code>int soma(int a, int b);</code> informa ao compilador que essa função receberá dois inteiros e retornará um inteiro.</p>
+
+    <h3>Dica:</h3>
+    <p>Usar protótipos é essencial em programas maiores e organizados em múltiplos arquivos. Eles garantem que o compilador conheça todas as funções usadas no programa.</p>
+</div>
+
+<!-- Capítulo 21 -->
+<div id="cap21" class="chapter">
+    <h2>Capítulo 21 - Funções String</h2>
+    <p>A linguagem C não possui um tipo de dado específico para strings como outras linguagens modernas. Em vez disso, utiliza arrays de caracteres terminados com o caractere nulo <code>'\0'</code>.</p>
+
+    <p>A biblioteca <code>&lt;string.h&gt;</code> fornece funções úteis para manipulação de strings.</p>
+
+    <h3>Principais funções:</h3>
+    <ul>
+        <li><code>strlen()</code> – Retorna o comprimento da string (sem contar o '\0')</li>
+        <li><code>strcpy()</code> – Copia uma string para outra</li>
+        <li><code>strcat()</code> – Concatena (junta) duas strings</li>
+        <li><code>strcmp()</code> – Compara duas strings</li>
+    </ul>
+
+    <h3>Exemplo de uso:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    char nome1[20] = "Olá";
+    char nome2[] = " Mundo";
+
+    strcat(nome1, nome2);  // Junta nome2 ao final de nome1
+
+    printf("Resultado: %s\n", nome1);
+    printf("Comprimento: %lu\n", strlen(nome1));
+
+    return 0;
+}</code></pre>
+
+    <h3>Explicação:</h3>
+    <ul>
+        <li><code>strcat()</code> juntou " Mundo" ao final de "Olá".</li>
+        <li><code>strlen()</code> contou o número de caracteres em "Olá Mundo".</li>
+    </ul>
+
+    <h3>Copiando strings:</h3>
+    <pre><code>char destino[50];
+char origem[] = "Texto de origem";
+
+strcpy(destino, origem);
+printf("Destino: %s\n", destino);</code></pre>
+
+    <h3>Comparando strings:</h3>
+    <pre><code>char a[] = "abc";
+char b[] = "abc";
+
+if (strcmp(a, b) == 0) {
+    printf("As strings são iguais.\n");
+} else {
+    printf("As strings são diferentes.\n");
+}</code></pre>
+
+    <p><strong>Importante:</strong> as funções de string não verificam automaticamente o tamanho dos arrays. Sempre assegure que há espaço suficiente para evitar erros de memória.</p>
+</div>
+
+<!-- Capítulo 22 -->
+<div id="cap22" class="chapter">
+    <h2>Capítulo 22 - Estrutura de Repetição FOR</h2>
+
+    <p>A estrutura <code>for</code> é usada para repetir um bloco de código um número definido de vezes. Ela é ideal quando você sabe quantas vezes deseja que o loop seja executado.</p>
+
+    <h3>Sintaxe:</h3>
+    <pre><code>for (inicialização; condição; incremento) {
+    // código a ser executado
+}</code></pre>
+
+    <h3>Exemplo básico:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    for (int i = 0; i &lt; 5; i++) {
+        printf("Valor de i: %d\n", i);
+    }
+    return 0;
+}</code></pre>
+
+    <p>Esse loop imprimirá os valores de 0 a 4.</p>
+
+    <h3>Explicação dos parâmetros:</h3>
+    <ul>
+        <li><strong>Inicialização:</strong> Executada uma vez no início (ex: <code>int i = 0</code>)</li>
+        <li><strong>Condição:</strong> Avaliada antes de cada iteração (enquanto for <code>true</code>, o loop continua)</li>
+        <li><strong>Incremento:</strong> Executado ao final de cada iteração (ex: <code>i++</code>)</li>
+    </ul>
+
+    <h3>Exemplo com decremento:</h3>
+    <pre><code>for (int j = 5; j &gt; 0; j--) {
+    printf("Contagem regressiva: %d\n", j);
+}</code></pre>
+
+    <h3>Loop para somar números:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int soma = 0;
+
+    for (int i = 1; i &lt;= 10; i++) {
+        soma += i;
+    }
+
+    printf("Soma de 1 a 10: %d\n", soma);
+    return 0;
+}</code></pre>
+
+    <p><strong>Dica:</strong> loops <code>for</code> também funcionam bem para percorrer arrays e estruturas repetitivas fixas.</p>
+</div>
+
+
+<!-- Capítulo 23 -->
+<div id="cap23" class="chapter">
+    <h2>Capítulo 23 - Estrutura de Repetição WHILE</h2>
+
+    <p>A estrutura <code>while</code> é utilizada para executar um bloco de código repetidamente enquanto uma determinada condição for verdadeira.</p>
+
+    <h3>Sintaxe do while:</h3>
+    <pre><code>while (condição) {
+    // bloco de código a ser executado
+}</code></pre>
+
+    <h3>Exemplo prático:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int i = 0;
+
+    while (i &lt; 5) {
+        printf("Valor de i: %d\n", i);
+        i++;
+    }
+
+    return 0;
+}</code></pre>
+
+    <p>No exemplo acima, o loop <code>while</code> continuará executando enquanto a variável <code>i</code> for menor que 5.</p>
+
+    <h3>Cuidados com o while</h3>
+    <p>É importante garantir que a condição do <code>while</code> eventualmente se torne falsa, caso contrário, o programa poderá entrar em um laço infinito.</p>
+
+    <h3>Exemplo de laço infinito (⚠️):</h3>
+    <pre><code>while (1) {
+    // Este bloco será executado para sempre
+}</code></pre>
+
+    <p>Loops infinitos são úteis em algumas situações, como em programas que aguardam eventos, mas devem ser usados com cuidado.</p>
+</div>
+
+<!-- Capítulo 24 -->
+<div id="cap24" class="chapter">
+    <h2>Capítulo 24 - Estrutura DO WHILE</h2>
+
+    <p>A estrutura <code>do while</code> é semelhante ao <code>while</code>, mas com uma diferença importante: o bloco de código é executado pelo menos uma vez antes da verificação da condição.</p>
+
+    <h3>Sintaxe do do while:</h3>
+    <pre><code>do {
+    // bloco de código a ser executado
+} while (condição);</code></pre>
+
+    <h3>Exemplo prático:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int i = 0;
+
+    do {
+        printf("Valor de i: %d\n", i);
+        i++;
+    } while (i &lt; 5);
+
+    return 0;
+}</code></pre>
+
+    <p>No exemplo acima, o bloco de código dentro do <code>do</code> é executado uma vez antes da verificação da condição <code>(i &lt; 5)</code>.</p>
+
+    <h3>Diferença entre while e do while:</h3>
+    <ul>
+        <li><strong>while:</strong> verifica a condição antes de executar o bloco.</li>
+        <li><strong>do while:</strong> executa o bloco primeiro e verifica a condição depois.</li>
+    </ul>
+
+    <h3>Quando usar do while?</h3>
+    <p>Use <code>do while</code> quando você precisar garantir que o bloco de código será executado pelo menos uma vez, como em menus de interação com o usuário.</p>
+</div>
+
+<!-- Capítulo 25 -->
+<div id="cap25" class="chapter">
+    <h2>Capítulo 25 - Estruturas de Repetição Internas (Nested Loops)</h2>
+
+    <p>Loops aninhados (ou nested loops) são estruturas onde um loop é colocado dentro de outro. Eles são úteis para percorrer estruturas mais complexas, como matrizes bidimensionais.</p>
+
+    <h3>Exemplo com for aninhado:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int linha, coluna;
+
+    for (linha = 1; linha &lt;= 3; linha++) {
+        for (coluna = 1; coluna &lt;= 5; coluna++) {
+            printf("(%d,%d) ", linha, coluna);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}</code></pre>
+
+    <p>Saída esperada:</p>
+    <pre><code>(1,1) (1,2) (1,3) (1,4) (1,5)
+(2,1) (2,2) (2,3) (2,4) (2,5)
+(3,1) (3,2) (3,3) (3,4) (3,5)</code></pre>
+
+    <h3>Como funciona?</h3>
+    <p>Para cada iteração do <code>for</code> externo (linhas), o <code>for</code> interno (colunas) é executado completamente.</p>
+
+    <h3>Aplicações comuns:</h3>
+    <ul>
+        <li>Trabalhar com matrizes ou arrays 2D</li>
+        <li>Construção de padrões em forma de texto</li>
+        <li>Operações repetidas por linhas e colunas</li>
+    </ul>
+</div>
+
+<!-- Capítulo 26 -->
+<div id="cap26" class="chapter">
+    <h2>Capítulo 26 - Break vs Continue</h2>
+
+    <p>As instruções <code>break</code> e <code>continue</code> são usadas para controlar o fluxo de loops em C. Elas permitem alterar a sequência normal de execução dentro de estruturas de repetição.</p>
+
+    <h3><code>break</code></h3>
+    <p>Interrompe completamente o loop atual, mesmo que a condição ainda seja verdadeira.</p>
+
+    <h4>Exemplo com break:</h4>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    for (int i = 1; i &lt;= 10; i++) {
+        if (i == 5) {
+            break;
+        }
+        printf("%d\n", i);
+    }
+
+    return 0;
+}</code></pre>
+
+    <p><strong>Saída:</strong> O loop para ao chegar em 5.</p>
+    <pre><code>1
+2
+3
+4</code></pre>
+
+    <h3><code>continue</code></h3>
+    <p>Pula a iteração atual do loop e continua com a próxima.</p>
+
+    <h4>Exemplo com continue:</h4>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    for (int i = 1; i &lt;= 5; i++) {
+        if (i == 3) {
+            continue;
+        }
+        printf("%d\n", i);
+    }
+
+    return 0;
+}</code></pre>
+
+    <p><strong>Saída:</strong> O número 3 será ignorado.</p>
+    <pre><code>1
+2
+4
+5</code></pre>
+
+    <h3>Resumo:</h3>
+    <ul>
+        <li><strong>break</strong>: Encerra o loop imediatamente.</li>
+        <li><strong>continue</strong>: Pula a iteração atual e continua o loop.</li>
+    </ul>
+</div>
+
+<!-- Capítulo 27 -->
+<div id="cap27" class="chapter">
+    <h2>Capítulo 27 - Arrays</h2>
+
+    <p>Um <strong>array</strong> em C é uma coleção de variáveis do mesmo tipo armazenadas em posições contíguas de memória. É muito útil quando precisamos armazenar múltiplos valores semelhantes.</p>
+
+    <h3>Declaração de um array:</h3>
+    <pre><code>tipo nome_array[tamanho];</code></pre>
+    <p>Exemplo:</p>
+    <pre><code>int numeros[5];</code></pre>
+
+    <h3>Inicialização de um array:</h3>
+    <pre><code>int numeros[5] = {10, 20, 30, 40, 50};</code></pre>
+
+    <h3>Acessando elementos:</h3>
+    <p>Os elementos são acessados por índices, que começam em 0.</p>
+    <pre><code>printf("%d\n", numeros[0]); // Imprime 10
+printf("%d\n", numeros[4]); // Imprime 50</code></pre>
+
+    <h3>Exemplo prático:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int numeros[5] = {1, 2, 3, 4, 5};
+
+    for (int i = 0; i &lt; 5; i++) {
+        printf("Elemento %d: %d\n", i, numeros[i]);
+    }
+
+    return 0;
+}</code></pre>
+
+    <h3>Saída:</h3>
+    <pre><code>Elemento 0: 1
+Elemento 1: 2
+Elemento 2: 3
+Elemento 3: 4
+Elemento 4: 5</code></pre>
+
+    <h3>Dica:</h3>
+    <p>É importante nunca acessar um índice fora do limite do array, pois isso pode causar comportamento inesperado (overflow de memória).</p>
+</div>
+
+<!-- Capítulo 28 -->
+<div id="cap28" class="chapter">
+    <h2>Capítulo 28 - Mostrar um array com Estruturas de Repetição</h2>
+
+    <p>Uma das formas mais eficientes de percorrer e exibir os elementos de um array é utilizando estruturas de repetição, como o laço <code>for</code>.</p>
+
+    <h3>Exemplo com <code>for</code>:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int numeros[5] = {10, 20, 30, 40, 50};
+
+    for (int i = 0; i &lt; 5; i++) {
+        printf("numeros[%d] = %d\n", i, numeros[i]);
+    }
+
+    return 0;
+}</code></pre>
+
+    <h3>Saída esperada:</h3>
+    <pre><code>numeros[0] = 10
+numeros[1] = 20
+numeros[2] = 30
+numeros[3] = 40
+numeros[4] = 50</code></pre>
+
+    <h3>Exemplo com <code>while</code>:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int numeros[3] = {7, 14, 21};
+    int i = 0;
+
+    while (i &lt; 3) {
+        printf("Elemento %d = %d\n", i, numeros[i]);
+        i++;
+    }
+
+    return 0;
+}</code></pre>
+
+    <h3>Importância:</h3>
+    <p>Laços de repetição permitem que trabalhemos com arrays de forma dinâmica e eficiente, especialmente quando precisamos processar ou exibir grandes quantidades de dados.</p>
+</div>
+
+<!-- Capítulo 29 -->
+<div id="cap29" class="chapter">
+    <h2>Capítulo 29 - Arrays 2D</h2>
+
+    <p>Um array bidimensional (ou matriz) é uma estrutura que representa dados em linhas e colunas, como uma tabela. É muito útil para representar tabuleiros, grades, matrizes matemáticas e mais.</p>
+
+    <h3>Declaração de um array 2D:</h3>
+    <pre><code>int matriz[2][3]; // 2 linhas e 3 colunas</code></pre>
+
+    <h3>Inicialização de um array 2D:</h3>
+    <pre><code>int matriz[2][3] = {
+    {1, 2, 3},
+    {4, 5, 6}
+};</code></pre>
+
+    <h3>Acessando os elementos:</h3>
+    <pre><code>printf("%d", matriz[1][2]); // Imprime 6</code></pre>
+
+    <h3>Exemplo completo:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int matriz[2][3] = {
+        {10, 20, 30},
+        {40, 50, 60}
+    };
+
+    for (int i = 0; i &lt; 2; i++) {
+        for (int j = 0; j &lt; 3; j++) {
+            printf("matriz[%d][%d] = %d\n", i, j, matriz[i][j]);
+        }
+    }
+
+    return 0;
+}</code></pre>
+
+    <h3>Saída esperada:</h3>
+    <pre><code>matriz[0][0] = 10
+matriz[0][1] = 20
+matriz[0][2] = 30
+matriz[1][0] = 40
+matriz[1][1] = 50
+matriz[1][2] = 60</code></pre>
+
+    <p>Arrays 2D são fundamentais para armazenar e manipular dados em forma de grade.</p>
+</div>
+
+<!-- Capítulo 30 -->
+<div id="cap30" class="chapter">
+    <h2>Capítulo 30 - Arrays de String</h2>
+
+    <p>Em C, uma string é na verdade um array de caracteres terminado com o caractere nulo <code>'\0'</code>. Um array de strings nada mais é do que um array de múltiplos arrays de caracteres.</p>
+
+    <h3>Declaração de um array de strings:</h3>
+    <pre><code>char frutas[3][10] = {
+    "Maçã",
+    "Banana",
+    "Uva"
+};</code></pre>
+
+    <h3>Exemplo completo:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    char frutas[3][10] = {
+        "Maçã",
+        "Banana",
+        "Uva"
+    };
+
+    for (int i = 0; i &lt; 3; i++) {
+        printf("Fruta %d: %s\n", i + 1, frutas[i]);
+    }
+
+    return 0;
+}</code></pre>
+
+    <h3>Saída esperada:</h3>
+    <pre><code>Fruta 1: Maçã
+Fruta 2: Banana
+Fruta 3: Uva</code></pre>
+
+    <p>Note que cada string pode ter até 9 caracteres visíveis, pois o décimo espaço é reservado para o caractere nulo <code>'\0'</code> que indica o fim da string.</p>
+</div>
+
+<!-- Capítulo 31 -->
+<div id="cap31" class="chapter">
+    <h2>Capítulo 31 - Trocar valores entre duas variáveis</h2>
+
+    <p>Trocar valores entre duas variáveis é uma operação comum em programação. Isso geralmente é feito com o uso de uma variável temporária.</p>
+
+    <h3>Exemplo usando variável temporária:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int a = 5;
+    int b = 10;
+    int temp;
+
+    printf("Antes da troca: a = %d, b = %d\n", a, b);
+
+    temp = a;
+    a = b;
+    b = temp;
+
+    printf("Depois da troca: a = %d, b = %d\n", a, b);
+
+    return 0;
+}</code></pre>
+
+    <h3>Saída esperada:</h3>
+    <pre><code>Antes da troca: a = 5, b = 10
+Depois da troca: a = 10, b = 5</code></pre>
+
+    <h3>Alternativa sem variável temporária (usando operadores):</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int a = 5;
+    int b = 10;
+
+    printf("Antes da troca: a = %d, b = %d\n", a, b);
+
+    a = a + b;
+    b = a - b;
+    a = a - b;
+
+    printf("Depois da troca: a = %d, b = %d\n", a, b);
+
+    return 0;
+}</code></pre>
+
+    <p>Embora o segundo método funcione, o uso de uma variável temporária é mais seguro e claro para a maioria dos casos.</p>
+</div>
+
+<!-- Capítulo 32 -->
+<div id="cap32" class="chapter">
+    <h2>Capítulo 32 - Organizar uma array</h2>
+
+    <p>Organizar (ou ordenar) uma array significa colocar seus elementos em uma determinada ordem, como crescente ou decrescente. O método mais simples para isso é o algoritmo <strong>Bubble Sort</strong>.</p>
+
+    <h3>Exemplo de ordenação crescente usando Bubble Sort:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int array[] = {5, 2, 9, 1, 5, 6};
+    int tamanho = sizeof(array) / sizeof(array[0]);
+    int i, j, temp;
+
+    for (i = 0; i &lt; tamanho - 1; i++) {
+        for (j = 0; j &lt; tamanho - i - 1; j++) {
+            if (array[j] &gt; array[j + 1]) {
+                temp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = temp;
+            }
+        }
+    }
+
+    printf("Array ordenado: ");
+    for (i = 0; i &lt; tamanho; i++) {
+        printf("%d ", array[i]);
+    }
+
+    return 0;
+}</code></pre>
+
+    <h3>Saída esperada:</h3>
+    <pre><code>Array ordenado: 1 2 5 5 6 9</code></pre>
+
+    <p>Existem algoritmos mais eficientes, como Quick Sort e Merge Sort, mas o Bubble Sort é ótimo para fins educacionais e pequenas quantidades de dados.</p>
+</div>
+
+<!-- Capítulo 33 -->
+<div id="cap33" class="chapter">
+    <h2>Capítulo 33 - STRUCT</h2>
+
+    <p>Em C, uma <strong>struct</strong> (estrutura) permite agrupar diferentes tipos de dados sob um único nome. Ela é útil quando você precisa representar um objeto com várias características.</p>
+
+    <h3>Sintaxe básica:</h3>
+    <pre><code>struct NomeDaStruct {
+    tipo membro1;
+    tipo membro2;
+    ...
+};</code></pre>
+
+    <h3>Exemplo prático:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+// Definindo a struct
+struct Pessoa {
+    char nome[50];
+    int idade;
+    float altura;
+};
+
+int main() {
+    struct Pessoa p1;
+
+    // Atribuindo valores
+    strcpy(p1.nome, "Ana");
+    p1.idade = 28;
+    p1.altura = 1.65;
+
+    // Exibindo valores
+    printf("Nome: %s\n", p1.nome);
+    printf("Idade: %d\n", p1.idade);
+    printf("Altura: %.2f\n", p1.altura);
+
+    return 0;
+}</code></pre>
+
+    <h3>Saída esperada:</h3>
+    <pre><code>Nome: Ana
+Idade: 28
+Altura: 1.65</code></pre>
+
+    <p>Com structs, você pode modelar estruturas mais complexas no seu programa de forma organizada e reutilizável.</p>
+</div>
+
+<!-- Capítulo 34 -->
+<div id="cap34" class="chapter">
+    <h2>Capítulo 34 - TYPEDEF</h2>
+
+    <p>O <strong>typedef</strong> é uma palavra-chave usada para criar um nome alternativo (alias) para tipos de dados existentes. Ele é muito útil para tornar o código mais legível e mais fácil de manter.</p>
+
+    <h3>Exemplo simples:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+typedef unsigned int idade;
+
+int main() {
+    idade x = 25;
+    printf("Idade: %u anos\n", x);
+    return 0;
+}</code></pre>
+
+    <h3>Exemplo com struct:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+// Definindo um alias para struct Pessoa
+typedef struct {
+    char nome[50];
+    int idade;
+} Pessoa;
+
+int main() {
+    Pessoa p;
+
+    strcpy(p.nome, "Carlos");
+    p.idade = 35;
+
+    printf("Nome: %s\n", p.nome);
+    printf("Idade: %d\n", p.idade);
+
+    return 0;
+}</code></pre>
+
+    <p>Com <code>typedef</code>, você pode escrever <code>Pessoa</code> diretamente, em vez de <code>struct Pessoa</code>, deixando o código mais limpo.</p>
+</div>
+
+<!-- Capítulo 35 -->
+<div id="cap35" class="chapter">
+    <h2>Capítulo 35 - Array de Structs</h2>
+
+    <p>Você pode usar <strong>arrays de structs</strong> para armazenar múltiplas estruturas do mesmo tipo. Isso é útil, por exemplo, quando você precisa lidar com uma lista de pessoas, produtos, alunos, etc.</p>
+
+    <h3>Exemplo:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+struct Aluno {
+    char nome[50];
+    int idade;
+};
+
+int main() {
+    struct Aluno turma[3];
+
+    strcpy(turma[0].nome, "Ana");
+    turma[0].idade = 20;
+
+    strcpy(turma[1].nome, "Bruno");
+    turma[1].idade = 22;
+
+    strcpy(turma[2].nome, "Clara");
+    turma[2].idade = 21;
+
+    for (int i = 0; i &lt; 3; i++) {
+        printf("Aluno %d:\n", i + 1);
+        printf("Nome: %s\n", turma[i].nome);
+        printf("Idade: %d\n\n", turma[i].idade);
+    }
+
+    return 0;
+}</code></pre>
+
+    <p>Arrays de structs permitem organizar dados complexos de forma estruturada e prática.</p>
+</div>
+
+<!-- Capítulo 36 -->
+<div id="cap36" class="chapter">
+    <h2>Capítulo 36 - Enums</h2>
+
+    <p>O <strong>enum</strong> (abreviação de "enumeration") é um tipo definido pelo programador que permite atribuir nomes a inteiros, tornando o código mais legível.</p>
+
+    <h3>Declaração de um enum:</h3>
+    <pre><code>enum DiaDaSemana {
+    DOMINGO,
+    SEGUNDA,
+    TERCA,
+    QUARTA,
+    QUINTA,
+    SEXTA,
+    SABADO
+};</code></pre>
+
+    <p>Por padrão, o primeiro valor tem o valor 0, e os seguintes incrementam em 1.</p>
+
+    <h3>Usando enums no código:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+enum DiaDaSemana {
+    DOMINGO,
+    SEGUNDA,
+    TERCA,
+    QUARTA,
+    QUINTA,
+    SEXTA,
+    SABADO
+};
+
+int main() {
+    enum DiaDaSemana hoje;
+
+    hoje = QUARTA;
+
+    if (hoje == QUARTA) {
+        printf("Hoje é quarta-feira!\n");
+    }
+
+    return 0;
+}</code></pre>
+
+    <p>Você também pode atribuir valores personalizados aos elementos do enum:</p>
+
+    <pre><code>enum Status {
+    SUCESSO = 1,
+    ERRO = -1
+};</code></pre>
+
+    <p>Enums tornam o código mais organizado e ajudam a evitar o uso de números "mágicos" espalhados pelo programa.</p>
+</div>
+
+<!-- Capítulo 37 -->
+<div id="cap37" class="chapter">
+    <h2>Capítulo 37 - Números Aleatórios</h2>
+
+    <p>Em C, você pode gerar números aleatórios usando a função <code>rand()</code>, que está disponível na biblioteca <code>&lt;stdlib.h&gt;</code>.</p>
+
+    <h3>Exemplo básico:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main() {
+    int numero = rand();  // Número aleatório
+    printf("Número aleatório: %d\n", numero);
+    return 0;
+}</code></pre>
+
+    <p>No entanto, para que os valores sejam diferentes a cada execução, usamos <code>srand()</code> com <code>time(NULL)</code> como semente.</p>
+
+    <h3>Exemplo com semente:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+
+int main() {
+    srand(time(NULL));  // Define a semente com o tempo atual
+
+    int aleatorio = rand() % 100;  // Gera número de 0 a 99
+    printf("Número aleatório entre 0 e 99: %d\n", aleatorio);
+    return 0;
+}</code></pre>
+
+    <p>Você pode ajustar a faixa usando:</p>
+    <pre><code>int aleatorio = (rand() % (max - min + 1)) + min;</code></pre>
+
+    <p>Isso garante que o número gerado esteja entre <code>min</code> e <code>max</code> (inclusive).</p>
+
+    <h3>Importante:</h3>
+    <ul>
+        <li>Use <code>srand(time(NULL))</code> apenas uma vez no <code>main()</code>.</li>
+        <li>Sem <code>srand()</code>, o <code>rand()</code> gerará os mesmos números toda vez que o programa for executado.</li>
+    </ul>
+</div>
+
+<!-- Capítulo 38 -->
+<div id="cap38" class="chapter">
+    <h2>Capítulo 38 – Operadores Bitwise</h2>
+
+    <p>Os operadores bitwise permitem a manipulação direta dos bits dos números inteiros. Eles são úteis para otimização de desempenho, programação de sistemas, criptografia, compressão de dados, entre outros.</p>
+
+    <h3>Operadores disponíveis em C:</h3>
+    <table>
+        <tr>
+            <th>Operador</th>
+            <th>Descrição</th>
+            <th>Exemplo</th>
+        </tr>
+        <tr>
+            <td>&</td>
+            <td>AND bit a bit</td>
+            <td>a & b</td>
+        </tr>
+        <tr>
+            <td>|</td>
+            <td>OR bit a bit</td>
+            <td>a | b</td>
+        </tr>
+        <tr>
+            <td>^</td>
+            <td>XOR bit a bit (OU exclusivo)</td>
+            <td>a ^ b</td>
+        </tr>
+        <tr>
+            <td>~</td>
+            <td>NOT bit a bit (complemento)</td>
+            <td>~a</td>
+        </tr>
+        <tr>
+            <td>&lt;&lt;</td>
+            <td>Deslocamento à esquerda</td>
+            <td>a &lt;&lt; 1</td>
+        </tr>
+        <tr>
+            <td>&gt;&gt;</td>
+            <td>Deslocamento à direita</td>
+            <td>a &gt;&gt; 1</td>
+        </tr>
+    </table>
+
+    <h3>Exemplo prático:</h3>
+    <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int a = 6; // 00000110
+    int b = 3; // 00000011
+
+    printf("a & b = %d\n", a & b);
+    printf("a | b = %d\n", a | b);
+    printf("a ^ b = %d\n", a ^ b);
+    printf("~a = %d\n", ~a);
+    printf("a &lt;&lt; 1 = %d\n", a &lt;&lt; 1);
+    printf("a &gt;&gt; 1 = %d\n", a &gt;&gt; 1);
+
+    return 0;
+}</code></pre>
+
+    <h3>Resumo:</h3>
+    <ul>
+        <li><strong>&</strong> – Retorna 1 se ambos os bits forem 1</li>
+        <li><strong>|</strong> – Retorna 1 se pelo menos um dos bits for 1</li>
+        <li><strong>^</strong> – Retorna 1 se os bits forem diferentes</li>
+        <li><strong>~</strong> – Inverte todos os bits</li>
+        <li><strong>&lt;&lt;</strong> – Move os bits para a esquerda (multiplica por 2 a cada deslocamento)</li>
+        <li><strong>&gt;&gt;</strong> – Move os bits para a direita (divide por 2 a cada deslocamento)</li>
+    </ul>
+</div>
+
+<!-- Capítulo 39 -->
+<div id="cap39" class="chapter">
+    <h2>Capítulo 39 - Endereços de Memória</h2>
+
+    <p>Em C, cada variável é armazenada em um endereço específico da memória do computador. Compreender como acessar e utilizar esses endereços é essencial para trabalhar com ponteiros, otimização de código e manipulação de dados em baixo nível.</p>
+
+    <h3>O operador <code>&</code></h3>
+    <p>O operador <code>&</code> é utilizado para obter o endereço de memória de uma variável.</p>
+
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int idade = 25;
+    printf("Valor da variável: %d\n", idade);
+    printf("Endereço de memória: %p\n", &idade);
+    return 0;
+}</code></pre>
+
+    <p>O especificador <code>%p</code> é usado com <code>printf</code> para exibir um endereço de memória.</p>
+
+    <h3>Por que isso é útil?</h3>
+    <ul>
+        <li>Permite a manipulação de variáveis por referência</li>
+        <li>É fundamental para trabalhar com ponteiros</li>
+        <li>Ajuda a entender como a memória é usada pelo programa</li>
+    </ul>
+
+    <h3>Visualizando o endereço de diferentes tipos</h3>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int inteiro = 10;
+    float decimal = 3.14;
+    char letra = 'A';
+
+    printf("Endereço de inteiro: %p\n", &inteiro);
+    printf("Endereço de float: %p\n", &decimal);
+    printf("Endereço de char: %p\n", &letra);
+
+    return 0;
+}</code></pre>
+
+    <p>Note que cada tipo ocupa um espaço diferente na memória, e os endereços podem variar dependendo da arquitetura do computador.</p>
+</div>
+
+<!-- Capítulo 40 -->
+<div id="cap40" class="chapter">
+    <h2>Capítulo 40 - Ponteiros</h2>
+
+    <p>Ponteiros são variáveis que armazenam o endereço de memória de outras variáveis. Eles são uma das características mais poderosas da linguagem C.</p>
+
+    <h3>Declaração de Ponteiros</h3>
+    <p>Para declarar um ponteiro, utilizamos o símbolo <code>*</code> antes do nome da variável:</p>
+
+<pre><code>int *ptr; // Ponteiro para um inteiro</code></pre>
+
+    <h3>Utilizando ponteiros</h3>
+    <p>Vamos ver um exemplo de como declarar, atribuir e acessar um valor usando ponteiros:</p>
+
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int idade = 30;
+    int *p;
+
+    p = &idade; // ponteiro 'p' recebe o endereço da variável 'idade'
+
+    printf("Valor de idade: %d\n", idade);
+    printf("Endereço de idade: %p\n", &idade);
+    printf("Valor armazenado em p (endereço): %p\n", p);
+    printf("Valor apontado por p: %d\n", *p); // acessa o valor usando o ponteiro
+
+    return 0;
+}</code></pre>
+
+    <h3>Explicação dos símbolos</h3>
+    <ul>
+        <li><strong>&</strong> – operador de endereço (retorna o endereço de uma variável)</li>
+        <li><strong>*</strong> – operador de desreferenciação (acessa o valor armazenado no endereço)</li>
+    </ul>
+
+    <h3>Por que usar ponteiros?</h3>
+    <ul>
+        <li>Permite passagem de parâmetros por referência em funções</li>
+        <li>Útil para trabalhar com arrays e strings</li>
+        <li>Fundamental para alocação dinâmica de memória</li>
+    </ul>
+</div>
+
+<!-- Capítulo 41 -->
+<div id="cap41" class="chapter">
+    <h2>Capítulo 41 - Criando Arquivos</h2>
+
+    <p>Em C, podemos criar e escrever arquivos utilizando as funções da biblioteca <code>stdio.h</code>. Isso é útil para salvar dados de programas, gerar relatórios, entre outras aplicações.</p>
+
+    <h3>Abrindo um arquivo para escrita</h3>
+    <p>Utilizamos a função <code>fopen()</code> com o modo <code>"w"</code> para criar um novo arquivo ou sobrescrever um existente:</p>
+
+<pre><code>FILE *arquivo;
+
+arquivo = fopen("dados.txt", "w");
+
+if (arquivo == NULL) {
+    printf("Erro ao criar o arquivo!\n");
+    return 1;
+}
+</code></pre>
+
+    <h3>Escrevendo no arquivo</h3>
+    <p>Podemos usar a função <code>fprintf()</code> para escrever dados no arquivo:</p>
+
+<pre><code>fprintf(arquivo, "Nome: João\nIdade: 25\n");</code></pre>
+
+    <h3>Fechando o arquivo</h3>
+    <p>Sempre feche o arquivo após terminar a escrita com <code>fclose()</code>:</p>
+
+<pre><code>fclose(arquivo);</code></pre>
+
+    <h3>Exemplo completo</h3>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    FILE *arquivo;
+
+    arquivo = fopen("dados.txt", "w");
+
+    if (arquivo == NULL) {
+        printf("Erro ao criar o arquivo!\n");
+        return 1;
+    }
+
+    fprintf(arquivo, "Nome: João\n");
+    fprintf(arquivo, "Idade: 25\n");
+
+    fclose(arquivo);
+
+    printf("Arquivo criado com sucesso!\n");
+
+    return 0;
+}</code></pre>
+
+    <h3>Modos de abertura de arquivo</h3>
+    <ul>
+        <li><code>"w"</code> – escrita (cria ou sobrescreve)</li>
+        <li><code>"a"</code> – anexar ao final (sem apagar o conteúdo existente)</li>
+        <li><code>"r"</code> – leitura (arquivo deve existir)</li>
+    </ul>
+
+    <p>Agora que sabemos criar arquivos, no próximo capítulo podemos aprender a <strong>ler arquivos</strong>.</p>
+</div>
+
+<!-- Capítulo 42 -->
+<div id="cap42" class="chapter">
+    <h2>Capítulo 42 - Lendo Arquivos</h2>
+
+    <p>Depois de criar arquivos, também precisamos saber como <strong>ler</strong> dados deles. Em C, usamos funções como <code>fopen()</code>, <code>fgetc()</code>, <code>fgets()</code> e <code>fscanf()</code> para ler o conteúdo de arquivos.</p>
+
+    <h3>Abrindo um arquivo para leitura</h3>
+    <p>Use o modo <code>"r"</code> na função <code>fopen()</code> para abrir o arquivo somente para leitura:</p>
+
+<pre><code>FILE *arquivo;
+
+arquivo = fopen("dados.txt", "r");
+
+if (arquivo == NULL) {
+    printf("Erro ao abrir o arquivo!\n");
+    return 1;
+}
+</code></pre>
+
+    <h3>Lendo com fgetc()</h3>
+    <p>A função <code>fgetc()</code> lê um caractere por vez:</p>
+
+<pre><code>char c;
+
+while ((c = fgetc(arquivo)) != EOF) {
+    printf("%c", c);
+}</code></pre>
+
+    <h3>Lendo com fgets()</h3>
+    <p>Podemos ler uma linha inteira com <code>fgets()</code>:</p>
+
+<pre><code>char linha[100];
+
+while (fgets(linha, sizeof(linha), arquivo) != NULL) {
+    printf("%s", linha);
+}</code></pre>
+
+    <h3>Lendo com fscanf()</h3>
+    <p>Também é possível ler dados formatados com <code>fscanf()</code>:</p>
+
+<pre><code>char nome[50];
+int idade;
+
+fscanf(arquivo, "Nome: %s\n", nome);
+fscanf(arquivo, "Idade: %d\n", &idade);
+
+printf("Nome: %s\nIdade: %d\n", nome, idade);</code></pre>
+
+    <h3>Fechando o arquivo</h3>
+    <p>Não se esqueça de fechar o arquivo:</p>
+
+<pre><code>fclose(arquivo);</code></pre>
+
+    <h3>Exemplo completo com fgets()</h3>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    FILE *arquivo;
+    char linha[100];
+
+    arquivo = fopen("dados.txt", "r");
+
+    if (arquivo == NULL) {
+        printf("Erro ao abrir o arquivo!\n");
+        return 1;
+    }
+
+    while (fgets(linha, sizeof(linha), arquivo) != NULL) {
+        printf("%s", linha);
+    }
+
+    fclose(arquivo);
+    return 0;
+}</code></pre>
+
+    <p>Agora que já sabemos criar e ler arquivos, estamos prontos para avançar para operações mais avançadas com arquivos, como atualização de dados!</p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
